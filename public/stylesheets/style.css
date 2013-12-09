@@ -113,7 +113,6 @@ header {
   padding: 50px 10px;
   color: #fff;
   font-size: 25px;
-  text-align: center;
 /*
    * Note the use of the `main-color`
    * variable and the `darken` function
@@ -122,23 +121,19 @@ header {
   border-bottom: 1px solid #df1806;
   text-shadow: 0px -1px 0px #df1806;
 }
+header h1 {
+  width: 800px;
+  margin: auto;
+}
 .container {
-  width: 500px;
+  width: 800px;
   margin: 50px auto;
   overflow: hidden;
-}
-.main-content {
-  float: left;
-  width: 300px;
 }
 .main-content p {
   margin-bottom: 20px;
 }
-.sidebar {
-  float: left;
-  width: 200px;
-}
-.sidebar .widget {
+.main-content .widget {
 /*
      * Note the lack of vendor
      * prefixes here. Nib will
@@ -147,12 +142,12 @@ header {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #ccc;
-  margin-left: 20px;
   background-color: #faf9f0;
   -webkit-box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
   box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
+  min-height: 100px;
 }
-.sidebar .widget h1 {
+.main-content .widget h1 {
   font-family: 'Quicksand';
   margin: 13px 10px 4px;
   padding-bottom: 10px;
@@ -161,7 +156,7 @@ header {
   border-radius: 2px 2px 0px 0px;
   margin-bottom: 10px;
 }
-.sidebar .widget p {
+.main-content .widget p {
   font-size: 13px;
   padding: 0px 10px;
   margin-bottom: 10px;
@@ -170,7 +165,7 @@ p {
   line-height: 1.8;
 }
 footer {
-  width: 500px;
+  width: 800px;
   margin: 50px auto;
   border-top: 1px dotted #ccc;
   padding-top: 5px;

@@ -22,7 +22,7 @@ function setPseudo() {
 	{
 		socket.emit('setPseudo', $input.val());
 		$('#chatControls').show();
-		$('#pseudoInput').hide();
+		$input.hide();
 		$('#pseudoSet').hide();
 	}
 }
