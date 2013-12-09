@@ -1,0 +1,18 @@
+!!!5
+html
+    head
+        title #{title} - My Site
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+        script(src='/socket.io/socket.io.js')
+        script(src='/javascript/client.js')
+    body
+      header
+        h1 A Chat application with Node.js and Socket.io
+    .container
+      .main-content
+          block content
+      .sidebar
+          block sidebar
+      footer
+          p Running on node with Express, Jade and Stylus
