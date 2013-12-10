@@ -33,6 +33,12 @@ app.get( '/', function( req, res ) {
 	} );
 } );
 
+app.get( '/leap', function( req, res ) {
+	res.render( 'leap', {
+		title: 'Leap'
+	} );
+} );
+
 io.sockets.on( 'connection', function( socket ) {
 
 	socket.on( 'setPseudo', function( data ) {

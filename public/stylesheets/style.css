@@ -117,9 +117,9 @@ header {
    * Note the use of the `main-color`
    * variable and the `darken` function
    */
-  background-color: #fa5b4d;
-  border-bottom: 1px solid #df1806;
-  text-shadow: 0px -1px 0px #df1806;
+  background-color: #800080;
+  border-bottom: 1px solid #5a005a;
+  text-shadow: 0px -1px 0px #5a005a;
 }
 header h1 {
   width: 800px;
@@ -163,6 +163,23 @@ header h1 {
 }
 p {
   line-height: 1.8;
+}
+canvas {
+  border: 1px solid #800080;
+  width: 600px;
+  margin: auto;
+  display: block;
+}
+button {
+  display: block;
+  width: 150px;
+  margin: 10px auto;
+}
+h2 {
+  display: block;
+  font-size: 30px;
+  width: 600px;
+  margin: 100px auto 10px;
 }
 footer {
   width: 800px;

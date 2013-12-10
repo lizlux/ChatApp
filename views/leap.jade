@@ -1,0 +1,17 @@
+extend layout
+
+block scripts
+    script(src='//js.leapmotion.com/0.2.0/leap.min.js', type='text/javascript')
+    script(src='/javascript/leap_examples.js')
+
+block content
+    h2 Leap Space
+    canvas#space-canvas
+
+    h2 Count Fingers
+    canvas#count-canvas
+
+    h2 Spawn Unicorn On Connect
+    canvas#spawn-unicorn-canvas
+    button#spawn-unicorn-button Connect to Leap!
+
