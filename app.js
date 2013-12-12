@@ -27,6 +27,8 @@ app.use( stylus.middleware( {
 // set public files directory
 app.use( express.static( __dirname + '/public' ) );
 
+
+// Routing - todo: find a more streamlined way to do this
 app.get( '/', function( req, res ) {
 	res.render( 'index', {
 		title: 'Home'
@@ -38,6 +40,14 @@ app.get( '/leap', function( req, res ) {
 		title: 'Leap'
 	} );
 } );
+
+app.get( '/gestures', function( req, res ) {
+	res.render( 'gestures', {
+		title: 'Leap Gestures'
+	} );
+} );
+
+
 
 io.sockets.on( 'connection', function( socket ) {
 

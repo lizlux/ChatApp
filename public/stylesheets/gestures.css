@@ -1,0 +1,76 @@
+.dot {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #ffd700;
+}
+.finger {
+  position: absolute;
+  display: block;
+  width: finger-size;
+  height: finger-size;
+  border-radius: finger-size;
+  background: #2e8b57;
+}
+#divider {
+  height: 100%;
+  width: 3px;
+  background: #999;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+.container {
+  position: relative;
+  min-height: 500px;
+}
+.box {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+.box.one {
+  background: #00f;
+  top: 20%;
+  left: 30%;
+}
+.box.two {
+  background: #f00;
+  top: 50%;
+  left: 70%;
+}
+.box.three {
+  background: #ffa500;
+  top: 80%;
+  left: 20%;
+}
+.box.four {
+  background: #800080;
+  top: 40%;
+  left: 25%;
+}
+.box.five {
+  background: #ff0;
+  top: 20%;
+  left: 75%;
+}
+.box.six {
+  background: #008000;
+  top: 40%;
+  left: 90%;
+}
+.box.seven {
+  background: #9acd05;
+  top: 10%;
+  left: 70%;
+}
+.box.eight {
+  background: #0ff;
+  top: 30%;
+  left: 60%;
+}
+.box.selected {
+  border: 3px dashed #000;
+}

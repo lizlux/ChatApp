@@ -9,6 +9,7 @@ $(function() {
 			height = canvas.height;
 
 		function leapToScene( frame, leapPos ){
+
 			var iBox = frame.interactionBox,
 				top = iBox.center[1] + iBox.size[1]/ 2,
 				left = iBox.center[0] - iBox.size[0]/ 2,
@@ -105,63 +106,6 @@ $(function() {
 			}
 		});
 
-		/*controller.on( 'frame' , function( frame ) {
-			var i, j, hand, finger, handPos, fingerPos;
-
-			// Clear all frames before adding new text
-			context.clearRect(0, 0, width, height);
-
-			for( i = 0; i < frame.hands.length; i++ ){
-				hand = frame.hands[i];
-				handPos = leapToScene( frame, hand.palmPosition );
-
-				for( j = 0; j < hand.fingers.length; j++ ){
-					finger = hand.fingers[j];
-					fingerPos = leapToScene( frame, finger.fingerPosition );
-
-					//First Draw the Connection
-
-					// Setting up the style for the stroke
-					context.strokeStyle = "#FFA040";
-					context.lineWidth = 3;
-
-					// Drawing the path
-					context.beginPath();
-					context.moveTo(   handPos[0] ,   handPos[1] );
-					context.lineTo( fingerPos[0] , fingerPos[1] );
-					context.closePath();
-					context.stroke();
-
-
-
-					//Second Draw the Finger
-
-
-					// Setting up the style for the stroke
-					context.strokeStyle = "#39AECF";
-					context.lineWidth = 5;
-
-					// Draw a circle
-					context.beginPath();
-					context.arc(fingerPos[0], fingerPos[1], 6, 0, Math.PI*2);
-					context.closePath();
-					context.stroke();
-
-				}
-
-				//Third draw the hand
-
-				// Setting up the style for the fill
-				context.fillStyle = "#FF5A40";
-
-				// Draw a circle
-				context.beginPath();
-				context.arc(handPos[0], handPos[1], 10, 0, Math.PI*2);
-				context.closePath();
-				context.fill();
-
-			}
-		});*/
 
 		controller.connect();
 	} )();

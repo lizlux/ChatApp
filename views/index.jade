@@ -1,4 +1,12 @@
 extend layout
+
+block scripts
+    script(src='/socket.io/socket.io.js')
+    script(src='/javascript/client.js')
+
+block heading1
+    h1 A Chat application with Node.js and Socket.io
+
 block content
     .widget
         input(type='text')#pseudoInput

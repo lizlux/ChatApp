@@ -107,6 +107,10 @@ body {
   font-family: 'Georgia';
   background-color: #faf9f0;
   color: #444;
+  height: 100%;
+}
+#wrapper {
+  height: 100%;
 }
 header {
   font-family: 'Quicksand';

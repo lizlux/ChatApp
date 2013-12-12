@@ -3,15 +3,15 @@ html
     head
         title #{title} - My Site
         link(rel='stylesheet', href='/stylesheets/style.css')
+        block styles
         script(src='http://code.jquery.com/jquery-2.0.3.js')
-        script(src='/socket.io/socket.io.js')
-        script(src='/javascript/client.js')
         block scripts
     body
-      header
-        h1 A Chat application with Node.js and Socket.io
-    .container
-      .main-content
-          block content
-      footer
-          p Running on node with Express, Jade and Stylus
+      #wrapper
+        header
+            block heading1
+        .container
+          .main-content
+              block content
+          footer
+              p Running on node with Express, Jade and Stylus
