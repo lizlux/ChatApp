@@ -1,6 +1,5 @@
 .dot {
   position: absolute;
-  display: block;
   width: 10px;
   height: 10px;
   border-radius: 10px;
@@ -16,14 +15,6 @@
 }
 #wrapper {
   position: relative;
-}
-#divider {
-  height: 100%;
-  width: 3px;
-  background: #999;
-  position: absolute;
-  top: 0;
-  left: 50%;
 }
 .container {
   position: relative;

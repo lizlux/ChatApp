@@ -3,11 +3,11 @@ finger-size = 20px
 
 .dot
   position absolute
-  display block
   width dot-size
   height dot-size
   border-radius dot-size
   background gold
+ // z-index 4
 
 #finger
   position absolute
@@ -16,17 +16,10 @@ finger-size = 20px
   height finger-size
   border-radius finger-size
   background seagreen
+  //z-index 3
 
 #wrapper
   position relative
-
-#divider
-  height 100%
-  width 3px
-  background #999
-  position absolute
-  top 0
-  left 50%
 
 .container
   position relative
@@ -36,6 +29,7 @@ finger-size = 20px
   position absolute
   width 40px
   height 40px
+  //z-index 2
 
   &.one
     background blue
