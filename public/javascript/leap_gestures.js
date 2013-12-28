@@ -50,8 +50,9 @@ $( function() {
 					.css( 'top', fingerPos[1] + 'px' );
 
 				if( frame.gestures.length && ( frame.gestures[0].type == 'screenTap' || frame.gestures[0].type == 'keyTap' ) ) {
-					// TODO: this is no longer working - it's getting an element below it
+					$finger.hide();
 					var $elem = $( document.elementFromPoint( fingerPos[0], fingerPos[1] ) );
+					$finger.show();
 
 					console.log( $elem );
 
@@ -66,14 +67,16 @@ $( function() {
 
 		// scroll up and down
 		if (frame.gestures.length) {
-			console.log( 'frame' );
+			//console.log( 'frame' );
 			var swipeDirection;
 			for (var i = 0; i < frame.gestures.length; i++) {
 				var gesture = frame.gestures[i];
 
-				if (gesture.type == "swipe") {
+				console.log( gesture );
+
+				if (gesture.type == "swipe" && frame.fingers.length == 2 ) {
 					//Classify swipe as either horizontal or vertical
-					var isHorizontal = Math.abs(gesture.direction[0]) > Math.abs(gesture.direction[1]);
+					/*var isHorizontal = Math.abs(gesture.direction[0]) > Math.abs(gesture.direction[1]);
 					//Classify as right-left or up-down
 					if(isHorizontal){
 						if(gesture.direction[0] > 0){
@@ -82,12 +85,12 @@ $( function() {
 							swipeDirection = "left";
 						}
 					} else { //vertical
-						if(gesture.direction[1] > 0){
+						*/ if(gesture.direction[1] > 0){
 							swipeDirection = "up";
 						} else {
 							swipeDirection = "down";
 						}
-					}
+					//}
 				}
 			}
 			if( swipeDirection == 'up' ) {
@@ -156,4 +159,6 @@ $( function() {
 
 
 	controller.connect();
+
+	window.controller = controller;
 } );

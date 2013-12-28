@@ -4,6 +4,7 @@
   height: 10px;
   border-radius: 10px;
   background: #ffd700;
+  z-index: 4;
 }
 #finger {
   position: absolute;
@@ -12,6 +13,7 @@
   height: 20px;
   border-radius: 20px;
   background: #2e8b57;
+  z-index: 3;
 }
 #wrapper {
   position: relative;
@@ -24,6 +26,7 @@
   position: absolute;
   width: 40px;
   height: 40px;
+  z-index: 2;
 }
 .box.one {
   background: #00f;

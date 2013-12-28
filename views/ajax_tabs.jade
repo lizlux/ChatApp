@@ -1,0 +1,19 @@
+extends layout
+
+block scripts
+    script(src='/javascript/ajax_tabs.js')
+
+
+
+block content
+    ul.ajax-tabs
+        li(data-url="/leap")
+            a(href="#") tab1
+        li(data-url="/leap")
+            a(href="#") tab2
+        li(data-url="/leap")
+            a(href="#") tab3
+
+    .ajax-tabs-content
+
+    script(src='/javascript/ajax_tabs.js')

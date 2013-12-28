@@ -47,7 +47,17 @@ app.get( '/gestures', function( req, res ) {
 	} );
 } );
 
+app.get( '/scm', function( req, res ) {
+	res.render( 'scm', {
+		title: 'SCM Music Player Sandbox'
+	} );
+} );
 
+app.get( '/ajax_tabs', function( req, res ) {
+	res.render( 'ajax_tabs', {
+		title: 'Ajax Tabs Example'
+	} );
+} );
 
 io.sockets.on( 'connection', function( socket ) {
 

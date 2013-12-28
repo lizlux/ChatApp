@@ -92,7 +92,7 @@ $(function() {
 				//Third draw the hand
 
 				// Setting up the style for the fill
-				context.fillStyle = "#FF5A40";
+				/*context.fillStyle = "#FF5A40";
 
 				// Creating the path for the hand circle
 				context.beginPath();
@@ -101,7 +101,7 @@ $(function() {
 				context.arc(handPos[0], handPos[1], 40, 0, Math.PI*2);
 
 				context.closePath();
-				context.fill();
+				context.fill();*/
 
 			}
 		});
