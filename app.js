@@ -8,7 +8,8 @@ var express = require( 'express' ),
 	app = express(),
 	http = require( 'http' ),
 	server = http.createServer( app ).listen( 3000 );
-	io = require( 'socket.io' ).listen( server );
+	io = require( 'socket.io' ).listen( server ),
+	requirejs = require( 'requirejs' );
 
 
 app.set( 'views', __dirname + '/views' );
@@ -23,6 +24,8 @@ app.use( stylus.middleware( {
 			.use( nib() );
 	}
 } ) );
+
+app.use( requirejs );
 
 // set public files directory
 app.use( express.static( __dirname + '/public' ) );
@@ -58,6 +61,19 @@ app.get( '/ajax_tabs', function( req, res ) {
 		title: 'Ajax Tabs Example'
 	} );
 } );
+
+app.get( '/nowrap', function( req, res ) {
+	res.render( 'nowrap', {
+		title: 'Testing WhiteSpace NoWrap in IE'
+	} );
+} );
+
+app.get( '/bourbon', function( req, res ) {
+	res.render( 'bourbon', {
+		title: 'Playing with bourbon'
+	} );
+} );
+
 
 io.sockets.on( 'connection', function( socket ) {
 

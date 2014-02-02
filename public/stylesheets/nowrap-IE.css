@@ -1,0 +1,11 @@
+.main-content p, .main-content span {
+	white-space: nowrap;
+	/*max-width: 300px;*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+	float: left;
+	font-weight: bold;
+	font-size: 14px;
+	padding-right: 3px;
+}
