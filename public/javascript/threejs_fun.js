@@ -14,7 +14,7 @@
 	scene.add( ambientLight );
 	scene.add( directionalLight );
 
-	camera.position.set( 20, 20, 20 );
+	camera.position.set( 100, 100, 100 );
 	camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
 
 	function update() {
@@ -82,13 +82,49 @@
 	}() );*/
 
 
-	/*( function addCube() {
-		var cubeGeometry = new THREE.CubeGeometry( 10, 10, 10 ),
+	function addCube( pos ) {
+		console.log( pos );
+		var cubeGeometry = new THREE.CubeGeometry( 5, 5, 5 ),
 			cubeMaterial = new THREE.MeshLambertMaterial( { color: 0x00FF00 } ),
 			cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
 
-		cube.position.set( 5, 5, 5 );
+		cube.position.set( pos[0], pos[1], pos[2] );
 		scene.add( cube );
-	}() );*/
+	}
+
+	( function addCubes() {
+		var i,
+			pos = {
+				x: -100,
+				y: -100,
+				z: -100
+			};
+
+		while( pos.x < 100 && pos.y < 100 && pos.x < 100 ) {
+			for( i in pos ) {
+				addCube( [( pos.x * -1 ), ( pos.y * -1 ), ( pos.z * -1 )] );
+				addCube( [pos.x, pos.y, pos.z] );
+				pos[i] += 20;
+			}
+		}
+	}() );
+
+
+	function checkRotation(){
+		var x = camera.position.x,
+			y = camera.position.y,
+			z = camera.position.z,
+			rotSpeed = .02;
+
+		if (keyboard.pressed("left")){
+			camera.position.x = x * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
+			camera.position.z = z * Math.cos(rotSpeed) - x * Math.sin(rotSpeed);
+		} else if (keyboard.pressed("right")){
+			camera.position.x = x * Math.cos(rotSpeed) - z * Math.sin(rotSpeed);
+			camera.position.z = z * Math.cos(rotSpeed) + x * Math.sin(rotSpeed);
+		}
+
+		camera.lookAt(scene.position);
+	}
 
 }() );
