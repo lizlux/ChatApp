@@ -5,12 +5,69 @@
 var express = require( 'express' ),
 	stylus = require( 'stylus' ),
 	nib = require( 'nib' ),
+	_ = require( 'underscore' ),
 	app = express(),
 	http = require( 'http' ),
-	server = http.createServer( app ).listen( 3000 );
+	server = http.createServer( app ).listen( 3000 ),
 	io = require( 'socket.io' ).listen( server ),
-	requirejs = require( 'requirejs' );
+	requirejs = require( 'requirejs' ),
+	pages = [
+		{
+			template: 'index',
+			title: 'Home',
+			path: ''
+		},
+		{
+			title: 'Leap',
+			template: 'leap'
+		},
+		{
+			title: 'Leap Gestures',
+			template: 'gestures'
+		},
+		{
+			title: 'scm',
+			template: 'SCM Music Player Sandbox'
+		},
+		{
+			title: 'Ajax Tabs Example',
+			template: 'ajax_tabs'
+		},
+		{
+			title: 'Testing WhiteSpace NoWrap in IE',
+			template: 'nowrap'
+		},
+		{
+			title: 'Playing with bourbon',
+			template: 'bourbon'
+		},
+		{
+			title: 'Three.js',
+			template: 'threejs'
+		}
+	];
 
+/**
+ * Route all pages
+ * Requires data.path and data.title
+ * @param data object
+ */
+function routeApp( data  ) {
+	if( data.path === undefined ) {
+		data.path = data.template;
+		if( data.path === undefined ) {
+			throw "A path or template must be specified for each page route.";
+		}
+	}
+
+	app.get( '/' + data.path, function( req, res ) {
+		res.render( data.template, {
+			title: data.title
+		} );
+	} );
+}
+
+_.each( pages, routeApp );
 
 app.set( 'views', __dirname + '/views' );
 app.set( 'view engine', 'jade' );
@@ -29,51 +86,6 @@ app.use( requirejs );
 
 // set public files directory
 app.use( express.static( __dirname + '/public' ) );
-
-
-// Routing - todo: find a more streamlined way to do this
-app.get( '/', function( req, res ) {
-	res.render( 'index', {
-		title: 'Home'
-	} );
-} );
-
-app.get( '/leap', function( req, res ) {
-	res.render( 'leap', {
-		title: 'Leap'
-	} );
-} );
-
-app.get( '/gestures', function( req, res ) {
-	res.render( 'gestures', {
-		title: 'Leap Gestures'
-	} );
-} );
-
-app.get( '/scm', function( req, res ) {
-	res.render( 'scm', {
-		title: 'SCM Music Player Sandbox'
-	} );
-} );
-
-app.get( '/ajax_tabs', function( req, res ) {
-	res.render( 'ajax_tabs', {
-		title: 'Ajax Tabs Example'
-	} );
-} );
-
-app.get( '/nowrap', function( req, res ) {
-	res.render( 'nowrap', {
-		title: 'Testing WhiteSpace NoWrap in IE'
-	} );
-} );
-
-app.get( '/bourbon', function( req, res ) {
-	res.render( 'bourbon', {
-		title: 'Playing with bourbon'
-	} );
-} );
-
 
 io.sockets.on( 'connection', function( socket ) {
 
